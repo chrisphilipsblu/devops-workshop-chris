@@ -69,7 +69,6 @@ jobs:
 
       - name: Build, tag, and push image to AWS ECR
         id: build-image
-        if: steps.detect-dockerfile-changes.outputs.any_modified == 'true'
         env:
           AWS_REGION: ${{ vars.AWS_REGION }}
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
